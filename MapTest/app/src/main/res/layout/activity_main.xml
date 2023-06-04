@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="출발지 : "
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/text_status2"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="현 위치"
+            android:textSize="30dp"
+            android:layout_marginLeft="5dp"
+            android:background="#D0C9C0"
+            android:layout_marginRight="30dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="도착지 : "
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/text_status2"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="상수역 1번출구"
+            android:textSize="30dp"
+            android:layout_marginLeft="5dp"
+            android:background="#D0C9C0"/>
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@android:drawable/ic_notification_overlay" />
+    </LinearLayout>
+
+    <!--    <WebView-->
+<!--        android:id="@+id/webview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:layout_marginStart="1dp"-->
+<!--        android:layout_marginTop="1dp"-->
+<!--        android:layout_marginEnd="1dp"-->
+<!--        android:layout_marginBottom="1dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="304dp"
+        android:src="@drawable/test" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginTop="30dp"/>
+
+
+
+</LinearLayout>

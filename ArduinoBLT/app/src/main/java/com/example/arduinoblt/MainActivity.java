@@ -33,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
     UUID BT_MODULE_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); // "random" unique identifier
 
     TextView textStatus;
-    Button btnParied, btnSearch, btnSendA,btnSendB,btnSendC,btnSendD;
+    Button btnParied, btnSearch, btnSendA,btnSendB,btnSendC,btnSendD,btnStart,btnGo,btnReset;
     ListView listView;
+    TextView text1;
+    TextView text2;
 
     BluetoothAdapter btAdapter;
     Set<BluetoothDevice> pairedDevices;
@@ -44,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     private final static int REQUEST_ENABLE_BT = 1;
     BluetoothSocket btSocket = null;
     ConnectedThread connectedThread;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,8 +73,15 @@ public class MainActivity extends AppCompatActivity {
         btnSendB = (Button) findViewById(R.id.btn_sendB);
         btnSendC = (Button) findViewById(R.id.btn_sendC);
         btnSendD = (Button) findViewById(R.id.btn_sendD);
+        btnStart = (Button) findViewById(R.id.btn_start);
+        btnGo = (Button) findViewById(R.id.btn_go);
+        btnReset = (Button) findViewById(R.id.btn_reset);
         listView = (ListView) findViewById(R.id.listview);
 
+        text1 = (TextView) findViewById(R.id.text1);
+        text2 = (TextView) findViewById(R.id.text2);
+        text1.setText("");
+        text2.setText("");
         // 연결된 것들 보여주기
         btArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
         deviceAddressArray = new ArrayList<>();
@@ -116,25 +124,133 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
     // 연결된거에 데이터보내기
     public void onClickButtonSendA(View view){
-        Log.d("test","A");
-        if(connectedThread!=null){ connectedThread.write("a"); }
+        String starts = text1.getText().toString();
+        if(starts.equals(""))
+            text1.setText("건물1");
+        else
+            text2.setText("건물1");
     }
     public void onClickButtonSendB(View view){
-        Log.d("test","B");
-        if(connectedThread!=null){ connectedThread.write("b"); }
+        String starts = text1.getText().toString();
+        if(starts.equals(""))
+            text1.setText("건물2");
+        else
+            text2.setText("건물2");
+
     }
     public void onClickButtonSendC(View view){
-        Log.d("test","C");
-        if(connectedThread!=null){ connectedThread.write("c"); }
+        String starts = text1.getText().toString();
+        if(starts.equals(""))
+            text1.setText("건물3");
+        else
+            text2.setText("건물3");
     }
     public void onClickButtonSendD(View view){
-        Log.d("test","D");
-        if(connectedThread!=null){ connectedThread.write("d"); }
+        String starts = text1.getText().toString();
+        if(starts.equals(""))
+            text1.setText("건물4");
+        else
+            text2.setText("건물4");
     }
+    public void onClickButtonGo(View view){
+        String starts = text1.getText().toString();
+        String ends = text2.getText().toString();
+        if(starts == "기본위치" && ends == "건물1"){
+            Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("1"); }
+        }
+        else if(starts == "기본위치" && ends == "건물2"){
+            Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("2"); }
+        }
+        else if(starts == "기본위치" && ends == "건물3"){
+            Toast.makeText(getApplicationContext(), "3", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("3"); }
+        }
+        else if(starts == "기본위치" && ends == "건물4"){
+            Toast.makeText(getApplicationContext(), "4", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("4"); }
+        }
 
+        else if(starts == "건물1" && ends == "기본위치"){
+            Toast.makeText(getApplicationContext(), "5", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("5"); }
+        }
+        else if(starts == "건물1" && ends == "건물2"){
+            Toast.makeText(getApplicationContext(), "6", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("6"); }
+        }
+        else if(starts == "건물1" && ends == "건물3"){
+            Toast.makeText(getApplicationContext(), "7", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("7"); }
+        }
+        else if(starts == "건물1" && ends == "건물4"){
+            Toast.makeText(getApplicationContext(), "8", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("8"); }
+        }
+        else if(starts == "건물2" && ends == "기본위치"){
+            Toast.makeText(getApplicationContext(), "9", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("9"); }
+        }
+        else if(starts == "건물2" && ends == "건물1"){
+            Toast.makeText(getApplicationContext(), "10", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("10"); }
+        }
+        else if(starts == "건물2" && ends == "건물3"){
+            Toast.makeText(getApplicationContext(), "11", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("11"); }
+        }
+        else if(starts == "건물2" && ends == "건물4"){
+            Toast.makeText(getApplicationContext(), "12", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("12"); }
+        }
+        else if(starts == "건물3" && ends == "기본위치"){
+            Toast.makeText(getApplicationContext(), "13", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("13"); }
+        }
+        else if(starts == "건물3" && ends == "건물1"){
+            Toast.makeText(getApplicationContext(), "14", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("14"); }
+        }
+        else if(starts == "건물3" && ends == "건물2"){
+            Toast.makeText(getApplicationContext(), "15", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("15"); }
+        }
+        else if(starts == "건물3" && ends == "건물4"){
+            Toast.makeText(getApplicationContext(), "16", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("16"); }
+        }
+        else if(starts == "건물4" && ends == "기본위치"){
+            Toast.makeText(getApplicationContext(), "17", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("17"); }
+        }
+        else if(starts == "건물4" && ends == "건물1"){
+            Toast.makeText(getApplicationContext(), "18", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("18"); }
+        }
+        else if(starts == "건물4" && ends == "건물2"){
+            Toast.makeText(getApplicationContext(), "19", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("19"); }
+        }
+        else if(starts == "건물4" && ends == "건물3"){
+            Toast.makeText(getApplicationContext(), "20", Toast.LENGTH_SHORT).show();
+            if(connectedThread!=null){ connectedThread.write("20"); }
+        }
+
+    }
+    public void onClickButtonSetStart(View view){
+        String starts = text1.getText().toString();
+        if(starts == "")
+            text1.setText("기본위치");
+        else
+            text2.setText("기본위치");
+    }
+    public void onClickButtonReset(View view){
+        text1.setText("");
+        text2.setText("");
+    }
     // Create a BroadcastReceiver for ACTION_FOUND.
     private final BroadcastReceiver receiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {

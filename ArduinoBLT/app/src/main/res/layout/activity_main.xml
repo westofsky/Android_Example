@@ -35,52 +35,138 @@
     <ListView
         android:id="@+id/listview"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="출발지" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도착지"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text2"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text=""/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:onClick="onClickButtonSetStart"
+            android:layout_weight="1"
+            android:text="기본위치" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
         <Button
             android:id="@+id/btn_sendA"
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:onClick="onClickButtonSendA"
             android:layout_weight="1"
             android:layout_marginRight="20dp"
-            android:text="Send a" />
+            android:text="건물1" />
 
         <Button
             android:id="@+id/btn_sendB"
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:onClick="onClickButtonSendB"
             android:layout_weight="1"
-            android:text="Send B" />
+            android:text="건물2" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="10dp">
         <Button
             android:id="@+id/btn_sendC"
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:layout_marginRight="20dp"
             android:onClick="onClickButtonSendC"
-            android:text="Send C" />
+            android:text="건물3" />
 
         <Button
             android:id="@+id/btn_sendD"
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:onClick="onClickButtonSendD"
-            android:text="Send D" />
+            android:text="건물4" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_reset"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:onClick="onClickButtonReset"
+            android:layout_weight="1"
+            android:background="#eb3434"
+            android:textColor="@color/white"
+            android:layout_marginRight="20dp"
+            android:text="초기화" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_go"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:onClick="onClickButtonGo"
+            android:background="#34eb4f"
+            android:layout_marginLeft="100dp"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:text="길찾기" />
+    </LinearLayout>
 
 
 
